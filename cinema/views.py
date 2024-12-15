@@ -110,7 +110,7 @@ class MovieViewSet(
         return MovieSerializer
 
     @action(
-        methods=("GET","POST"),
+        methods=("GET", "POST"),
         detail=True,
         permission_classes=(IsAdminUser,),
         url_path="upload-image",
@@ -121,7 +121,6 @@ class MovieViewSet(
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
-
 
 
 class MovieSessionViewSet(viewsets.ModelViewSet):
